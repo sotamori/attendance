@@ -5,6 +5,8 @@ class Member():
         self.name = name
         self.joinDate = joinDate
 
-
+    def __str__(self):
+        return "Name : {}\n Join Date : {}" 
+        
     def display(self):
-        return "Name : " + self.name + " Join Date : " + self.joinDate
+        return print()
