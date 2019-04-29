@@ -4,7 +4,7 @@ from member import Member
 app = Flask(__name__)
 
 @app.route("/")
-def main(self):
+def main():
     '''
     メンバー取得
     '''

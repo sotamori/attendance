@@ -7,4 +7,4 @@ class Member():
 
 
     def display(self):
-        return self.name, self.joinDate
+        return "Name : " + self.name + "Join Date : " + self.joinDate
