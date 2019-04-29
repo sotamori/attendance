@@ -5,3 +5,6 @@ class Member():
         self.name = name
         self.joinDate = joinDate
 
+
+    def display(self):
+        return self.name, self.joinDate

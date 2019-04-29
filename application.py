@@ -19,4 +19,4 @@ def main(self):
     '''
     メンバー表示
     '''
-    return member
+    return member.display
