@@ -1,6 +1,4 @@
 from flask import Flask
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
 from member import Member
 
 app = Flask(__name__)
