@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAttendanceTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAttendanceLabel_id}"/>
+                    <h:outputText value="#{attendanceController.selected.id}" title="#{bundle.ViewAttendanceTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewAttendanceLabel_status}"/>
+                    <h:outputText value="#{attendanceController.selected.status}" title="#{bundle.ViewAttendanceTitle_status}"/>
+                    <h:outputText value="#{bundle.ViewAttendanceLabel_classId}"/>
+                    <h:outputText value="#{attendanceController.selected.classId}" title="#{bundle.ViewAttendanceTitle_classId}"/>
+                    <h:outputText value="#{bundle.ViewAttendanceLabel_studentId}"/>
+                    <h:outputText value="#{attendanceController.selected.studentId}" title="#{bundle.ViewAttendanceTitle_studentId}"/>
+                    <h:outputText value="#{bundle.ViewAttendanceLabel_date}"/>
+                    <h:outputText value="#{attendanceController.selected.date}" title="#{bundle.ViewAttendanceTitle_date}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{attendanceController.destroyAndView}" value="#{bundle.ViewAttendanceDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAttendanceEditLink}"/>
+                <br />
+                <h:commandLink action="#{attendanceController.prepareCreate}" value="#{bundle.ViewAttendanceCreateLink}" />
+                <br />
+                <h:commandLink action="#{attendanceController.prepareList}" value="#{bundle.ViewAttendanceShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAttendanceIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
